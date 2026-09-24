@@ -1,6 +1,10 @@
 export type ButtonProps = {
-  id: number;
   label: string;
+}
+
+export type ButtonData = {
+  id: number;
+  label:string;
 }
 
 function Button ({label}: ButtonProps){
@@ -9,7 +13,7 @@ function Button ({label}: ButtonProps){
 
 export default function Home (){
 
-  const buttons: ButtonProps[] = [
+  const buttons: ButtonData[] = [
     {
     id:1,
     label: "button 1",
@@ -28,7 +32,7 @@ export default function Home (){
     <main>
       <h1>Belajar Component 1</h1>
       {buttons.map((button) => (
-        <Button key={button.id} id={button.id} label={button.label} />
+        <Button key={button.id}  label={button.label} />
       ))}
     </main>
   )
