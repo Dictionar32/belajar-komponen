@@ -1,13 +1,13 @@
 export type ButtonProps = {
   label: string;
-  variant: "primary" | "danger";
+  variant: "primary" | "danger" | "info" | "secondary";
   onClick: () => void;
 }
 
 export type ButtonData = {
   id: number;
   label:string;
-  variant: "primary" | "danger";
+  variant: "primary" | "danger" | "info" | "secondary";
 }
 
 function Button ({label, variant, onClick}: ButtonProps){
@@ -30,18 +30,23 @@ export default function Home (){
   const buttons: ButtonData[] = [
     {
     id:1,
-    label: "button 1",
-    variant: "primary"
+    label: "read ",
+    variant: "info"
     },
     {
       id:2,
-      label: 'button 2',
-      variant: "danger"
+      label: 'create',
+      variant: "primary"
     },
     {
       id:3,
-      label: 'button 3',
-      variant: "primary"
+      label: 'update',
+      variant: "secondary"
+    },
+    {
+      id:4,
+      label: 'delete',
+      variant: 'danger'
     }
   ]
 
