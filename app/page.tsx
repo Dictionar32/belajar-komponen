@@ -1,3 +1,7 @@
+"use client";
+
+import {useState} from "react";
+
 export type ButtonProps = {
   label: string;
   variant: "primary" | "danger" | "info" | "secondary";
@@ -23,8 +27,10 @@ function Button ({label, variant, onClick}: ButtonProps){
 
 export default function Home (){
 
+  const [count, setCount] = useState(0);
+
   function handleButtonClick() {
-    console.log("button clicked");
+    setCount(count + 1);
   }
 
   const buttons: ButtonData[] = [
@@ -53,6 +59,8 @@ export default function Home (){
   return(
     <main>
       <h1>Belajar Component 1</h1>
+
+      <p> Button di klik: {count} kali</p>
 
       {buttons.map((button) => (
         <Button 
